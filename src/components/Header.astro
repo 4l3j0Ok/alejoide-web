@@ -5,12 +5,12 @@ import meImage from "../images/me.webp";
 
 <header>
 	<div class="content">
-		<div class="text">
+		<div class="item">
 			<p>Hola, soy</p>
 			<h1>Alejo Sarmiento</h1>
 			<p><strong>SRE</strong> y <strong>Desarrollador de aplicaciones</strong></p>
 		</div>
-		<div class="image">
+		<div class="item">
 			<Image src={meImage} alt="Alejo Sarmiento" />
 		</div>
 </div>
@@ -43,11 +43,11 @@ import meImage from "../images/me.webp";
 		margin-bottom: 0;
 		margin-top: 0;
 	}
-	.content > * {
+	.item {
     flex-basis: 40%;
 		box-sizing: border-box;
 	}
-	.image img {
+	.item img {
     width: 100%;
 		height: 100%;
 		mask-image: linear-gradient(
@@ -61,7 +61,7 @@ import meImage from "../images/me.webp";
 			flex-direction: column;
 			width: 60%;
 		}
-		.content .image {
+		.item {
 			flex-grow: 1;
 			margin-top: 1em
 		}
