@@ -15,12 +15,12 @@
 
 <style>
   .navbar {
-    background-color: #221525;
+    background-color: var(--accentColor);
     padding-top: 1.5em;
     padding-bottom: 1.5em;
     position: sticky;
     display: flex;
-    justify-content: space-around;
+    justify-content: center
   }
   .navbar-content {
     display: flex;
@@ -28,6 +28,7 @@
 		width: 70%;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 	}
   .links {
     display: flex;
@@ -43,5 +44,15 @@
     color: white;
     text-decoration: none;
     letter-spacing: 0.25em;
+  }
+  @media (max-width: 900px) {
+    .navbar-content {
+      justify-content: center;
+      flex-direction: column;
+      width: 90%;
+    }
+    .title {
+      margin-bottom: .5em;
+    }
   }
 </style>
