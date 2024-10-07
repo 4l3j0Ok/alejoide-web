@@ -32,11 +32,14 @@ const { title } = Astro.props;
 	backgroundLeftColor: colors.backgroundLeft,
 	backgroundRightColor: colors.backgroundRight,
 	accentColor: colors.accent,
-	headerNameColor: colors.headerName,
 }}>
 	html {
 		font-family: Montserrat;
-		color: #000000;
+		color: white;
+		::selection {
+			background: var(--accentColor);
+		}
+		scroll-behavior: smooth;
 	}
 	body {
 		background: linear-gradient(
