@@ -1,29 +1,32 @@
 ---
 ---
 
-<nav class="navbar">
-  <div class="navbar-content">
+<nav>
+  <div class="content">
     <a href="/" class="title">ALEJOIDE</a>
     <div class="links">
       <a href="#">Inicio</a>
-      <a href="#">Sobre mí</a>
-      <a href="#">Proyectos</a>
-      <a href="#">Contacto</a>
+      <a href="#AboutMe">Sobre mí</a>
+      <a href="#Projects">Proyectos</a>
+      <a href="#Contact">Contacto</a>
     </div>
   </div>
 </nav>
 
 <style>
-  .navbar {
+  nav {
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: transparent;
+    /* background-color blur: */
+    /* background-color: rgba(0, 0, 0, .5); */
+    backdrop-filter: blur(.5em);
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+    z-index: 1;
   }
-  .navbar-content {
+  .content {
     display: flex;
     flex-wrap: wrap;
 		width: 70%;
@@ -34,6 +37,11 @@
   .links {
     display: flex;
     gap: 2rem;
+  }
+  .links a:hover {
+    color: var(--accentColor);
+    transition-property: color;
+    transition-duration: .3s;
   }
   .links a {
     color: white;
@@ -47,7 +55,7 @@
     letter-spacing: 0.25em;
   }
   @media (max-width: 900px) {
-    .navbar-content {
+    .content {
       justify-content: center;
       flex-direction: column;
       width: 90%;
