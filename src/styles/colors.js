@@ -1,5 +1,7 @@
 export const colors = {
-  background: '#000',
-  accent: '#d49c00'
+  backgroundLeft: '#1f1f1f',
+  backgroundRight: '#000',
+  accent: '#000',
+  headerName: '#d49c00',
 };
 

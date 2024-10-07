@@ -29,14 +29,21 @@ const { title } = Astro.props;
 
 
 <style is:global define:vars={{
-	backgroundColor: colors.background,
-	accentColor: colors.accent
+	backgroundLeftColor: colors.backgroundLeft,
+	backgroundRightColor: colors.backgroundRight,
+	accentColor: colors.accent,
+	headerNameColor: colors.headerName,
 }}>
 	html {
 		font-family: Montserrat;
 		color: #000000;
 	}
 	body {
+		background: linear-gradient(
+			135deg,
+			var(--backgroundLeftColor),
+			var(--backgroundRightColor) 55%
+		);
 		margin: 0;
 	}
 	code {
