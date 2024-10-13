@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import "@fontsource/montserrat";
-import { colors } from "../styles/colors.js";
+import { colors } from "../config/colors.js";
 
 interface Props {
 	title: string;
@@ -30,6 +30,7 @@ interface Props {
 		backgroundLeftColor: colors.backgroundLeft,
 		backgroundRightColor: colors.backgroundRight,
 		accentColor: colors.accent,
+		contentWidth: "70%",
 	}}
 >
 	html {
@@ -47,16 +48,5 @@ interface Props {
 			var(--backgroundRightColor) 55%
 		);
 		margin: 0;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
 	}
 </style>

@@ -10,7 +10,7 @@ interface Props {
     <div class="title">
       <h1>{Astro.props.sectionTitle}</h1>
     </div>
-    <div class="text">
+    <div class="body">
       <slot />
     </div>
   </div>
@@ -24,27 +24,21 @@ interface Props {
     align-items: flex-start;
   }
   .content {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 70%;
+    width: var(--contentWidth);
     max-width: 1500px;
   }
-  .content h1 {
-    font-size: 3.5em;
+  .title {
+    font-size: 2.5em;
     font-weight: 700;
     margin: 0;
     color: var(--accentColor);
   }
-  .content > * {
-    flex-basis: 40%;
-    box-sizing: border-box;
-  }
   @media (max-width: 900px) {
     .content {
-      font-size: 1.25em;
       flex-direction: column;
-      width: 60%;
+    }
+    .title {
+      font-size: 2em;
     }
   }
 </style>
