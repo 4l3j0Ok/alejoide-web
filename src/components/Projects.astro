@@ -2,6 +2,7 @@
 import Section from "../layouts/Section.astro";
 import Image from "astro/components/Image.astro";
 import { projects } from "../config/projects.js";
+import { Icon } from "astro-icon/components";
 ---
 
 <Section sectionId="Projects" , sectionTitle="Proyectos">
@@ -17,12 +18,18 @@ import { projects } from "../config/projects.js";
               <p>{description}</p>
             </div>
             <div class="links">
-              <a href={webUrl} target="_blank">
-                Ver sitio
-              </a>
-              <a href={repoUrl} target="_blank">
-                Ver código
-              </a>
+              {webUrl && (
+                <a href={webUrl} target="_blank">
+                  <Icon name="mdi:open-in-new" />
+                  Ver sitio
+                </a>
+              )}
+              {repoUrl && (
+                <a href={repoUrl} target="_blank">
+                  <Icon name="mdi:github" />
+                  Ver código
+                </a>
+              )}
             </div>
           </div>
         );
@@ -35,8 +42,8 @@ import { projects } from "../config/projects.js";
   .projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
+    justify-content: space-around;
+    gap: 0.5em;
   }
   .project {
     background-color: rgba(15, 15, 15, 0.5);
