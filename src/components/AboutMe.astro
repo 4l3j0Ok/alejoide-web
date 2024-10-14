@@ -1,5 +1,6 @@
 ---
 import Section from "../layouts/Section.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Section sectionId="AboutMe" , sectionTitle="Sobre mí">
@@ -21,4 +22,81 @@ import Section from "../layouts/Section.astro";
 		A día de hoy me encuentro enamorado de esta nueva área, y apunto a seguir
 		aprendiendo y creciendo profesionalmente en ella.
 	</p>
+	<h1>Mis áreas de trabajo</h1>
+	<div class="work-areas">
+		<div class="work-area">
+			<h2>
+				<Icon name="mdi:infinity" />
+				SRE / DevOps
+			</h2>
+			<p>
+				Actualmente me encuentro trabajando de SRE/DevOps, donde trabajo
+				principalmente con tecnologías como Docker, Kubernetes, Webservers,
+				Jenkins, GitLab, que me permiten crear infraestructura y pipelines para
+				aplicar prácticas de CI/CD.
+			</p>
+		</div>
+		<div class="work-area">
+			<h2>
+				<Icon name="mdi:language-python" />
+				Backend
+			</h2>
+			<p>
+				Tengo experiencia trabajando como desarrollador backend, siendo mi
+				fuerte principal el desarrollo en Python, lenguaje que me apasiona y con
+				el que he trabajado tanto en proyectos personales como profesionales con
+				frameworks como Flask, FastAPI, PyQT/PySide, Reflex, entre otros.
+			</p>
+		</div>
+		<div class="work-area">
+			<h2>
+				<Icon name="mdi:react" />
+				Frontend
+			</h2>
+			<p>
+				Me encuentro incursionando en el mundo del desarrollo de frontend, donde
+				estoy aprendiendo Astro, Reflex, React, entre otras tecnologías con el
+				objetivo de poder crear aplicaciones web.
+			</p>
+		</div>
+		<div class="work-area">
+			<h2>
+				<Icon name="mdi:school" />
+				Profesor
+			</h2>
+			<p>
+				Me gusta mucho enseñar, por lo que también estoy apuntando a ser
+				profesor de programación en escuelas de nivel superior en un futuro.
+			</p>
+		</div>
+	</div>
+	<style>
+		h1 {
+			font-size: 2.5em;
+			font-weight: 700;
+			color: var(--accentColor);
+		}
+		.work-areas {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2em;
+			justify-content: space-between;
+			flex-direction: row;
+		}
+		.work-area {
+			min-width: 20%;
+			width: 45%;
+		}
+		.work-area [data-icon] {
+			color: var(--accentColor);
+		}
+		@media (max-width: 950px) {
+			.work-areas {
+				flex-direction: column;
+			}
+			.work-areas .work-area {
+				width: 100%;
+			}
+		}
+	</style>
 </Section>
