@@ -71,6 +71,7 @@ import { Icon } from "astro-icon/components";
     gap: 1em;
     width: 100%;
     flex-direction: column;
+    transition: 0.3s;
     /* justify-self: flex-end; */
   }
   .links a {
@@ -80,5 +81,8 @@ import { Icon } from "astro-icon/components";
     border-radius: 0.5em;
     text-decoration: none;
     text-align: center;
+  }
+  .links a:hover {
+    background-color: var(--accentColorDark);
   }
 </style>

@@ -32,6 +32,7 @@ interface Props {
 		backgroundLeftColor: colors.backgroundLeft,
 		backgroundRightColor: colors.backgroundRight,
 		accentColor: colors.accent,
+		accentColorDark: colors.accentDark,
 		contentWidth: "70%",
 	}}
 >
@@ -40,6 +41,7 @@ interface Props {
 		color: white;
 		::selection {
 			background: var(--accentColor);
+			color: white;
 		}
 		scroll-behavior: smooth;
 	}
@@ -49,5 +51,13 @@ interface Props {
 			var(--backgroundLeftColor),
 			var(--backgroundRightColor) 55%
 		);
+	}
+	a {
+		color: white;
+		text-decoration: none;
+		transition: 0.3s;
+	}
+	a:hover {
+		color: var(--accentColor);
 	}
 </style>
