@@ -11,10 +11,16 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
+    "@astrojs/node": "^8.3.4",
+    "@astrojs/react": "^3.6.2",
     "@fontsource/montserrat": "^5.1.0",
     "@iconify-json/mdi": "^1.2.1",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
     "astro": "5.0.0-beta.2",
     "astro-icon": "^1.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "resend": "^4.0.0",
     "typescript": "^5.6.2"
   }
