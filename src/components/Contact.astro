@@ -1,34 +1,61 @@
 ---
+export const prerender = false;
 import Section from "../layouts/Section.astro";
+
+const emailEndpoint = "api/sendEmail.json";
+
+type formData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const response = await fetch(Astro.url + emailEndpoint, {
+      method: "POST",
+      body: formData,
+    });
+
+    const data: formData = await response.json();
+
+    if (response.status === 200) {
+      console.log(data.message);
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
 <Section sectionId="Contact" , sectionTitle="Contacto">
-  <form>
-    <p>Si querés contactarme, podés hacerlo a través de este formulario.</p>
-    <div class="top">
-      <div class="form-input">
-        <label for="name">Nombre</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-      <div class="form-input">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
+  <p>Si querés contactarme, podés hacerlo a través de este formulario.</p>
+  <div class="top">
+    <div class="form-input">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" required />
     </div>
-    <div class="bottom">
-      <div class="form-input">
-        <label for="message">Mensaje</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-      <button type="submit">Enviar</button>
+    <div class="form-input">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
     </div>
-    <p>
-      O si preferís, podes escribirme a mi correo electrónico: <a
-        class="email"
-        href="mailto:contacto@alejoide.com">contacto@alejoide.com</a
-      >
-    </p>
-  </form>
+  </div>
+  <div class="bottom">
+    <div class="form-input">
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">Enviar</button>
+  </div>
+  <p>
+    O si preferís, podes escribirme a mi correo electrónico: <a
+      class="email"
+      href="mailto:contacto@alejoide.com">contacto@alejoide.com</a
+    >
+  </p>
 </Section>
 
 <style>
