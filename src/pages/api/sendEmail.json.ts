@@ -41,6 +41,7 @@ export const POST: APIRoute = async ({ params, request }) => {
     html
   })
   if (send.data) {
+    console.log("Email enviado correctamente.")
     return new Response(
       JSON.stringify({
         message: send.data
