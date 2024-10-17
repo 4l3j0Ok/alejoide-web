@@ -1,0 +1,68 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+input,
+textarea {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  /* border: 1px solid var(--accentColor); */
+  border: none;
+}
+
+input:focus,
+textarea:focus {
+
+  outline: 1px solid var(--accentColor);
+}
+
+textarea {
+  height: 5em;
+  resize: none;
+}
+
+button {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: var(--accentColor);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--accentColorDark);
+}
+
+:disabled {
+  background-color: var(--blockColor);
+  color: white;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: var(--blockColor);
+}
+
+@media (max-width: 900px) {
+  .top {
+    flex-direction: column;
+  }
+}

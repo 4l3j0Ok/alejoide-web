@@ -1,112 +1,27 @@
 ---
 export const prerender = false;
 import Section from "../layouts/Section.astro";
-
-const emailEndpoint = "api/sendEmail.json";
-
-type formData = {
-  name: string;
-  email: string;
-  message: string;
-};
-
-if (Astro.request.method === "POST") {
-  try {
-    const formData = await Astro.request.formData();
-    const response = await fetch(Astro.url + emailEndpoint, {
-      method: "POST",
-      body: formData,
-    });
-
-    const data: formData = await response.json();
-
-    if (response.status === 200) {
-      console.log(data.message);
-    }
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
-  }
-}
+import ContactForm from "../components/ContactForm.tsx";
+import { PUBLIC_EMAIL } from "astro:env/client";
 ---
 
 <Section sectionId="Contact" , sectionTitle="Contacto">
   <p>Si querés contactarme, podés hacerlo a través de este formulario.</p>
-  <div class="top">
-    <div class="form-input">
-      <label for="name">Nombre</label>
-      <input type="text" id="name" name="name" required />
-    </div>
-    <div class="form-input">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
-    </div>
-  </div>
-  <div class="bottom">
-    <div class="form-input">
-      <label for="message">Mensaje</label>
-      <textarea id="message" name="message" required></textarea>
-    </div>
-    <button type="submit">Enviar</button>
-  </div>
+  <ContactForm client:load />
   <p>
     O si preferís, podes escribirme a mi correo electrónico: <a
-      class="email"
-      href="mailto:contacto@alejoide.com">contacto@alejoide.com</a
+      href={`mailto:${PUBLIC_EMAIL}`}
+      class="email">{PUBLIC_EMAIL}</a
     >
   </p>
 </Section>
 
 <style>
-  .form-input {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5em;
-  }
-  .top {
-    display: flex;
-    justify-content: space-between;
-    gap: 1em;
-    margin-bottom: 1em;
-  }
-  .bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-  input,
-  textarea {
-    padding: 0.5em;
-    border-radius: 0.5em;
-    border: 1px solid var(--accentColor);
-  }
-  textarea {
-    height: 5em;
-  }
-  button {
-    padding: 0.5em;
-    border-radius: 0.5em;
-    border: none;
-    background-color: var(--accentColor);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  button:hover {
-    background-color: var(--accentColorDark);
-  }
   .email {
     font-weight: 700;
     color: var(--accentColor);
   }
   .email:hover {
     color: var(--accentColorDark);
-  }
-  @media (max-width: 900px) {
-    .top {
-      flex-direction: column;
-    }
   }
 </style>

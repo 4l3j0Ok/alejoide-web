@@ -3,5 +3,6 @@ export const colors = {
   backgroundRight: '#000',
   accent: '#d49c00',
   accentDark: '#d47800',
+  block: '#1e1e1e',
 };
 
