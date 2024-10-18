@@ -1,14 +1,49 @@
 ---
-
+import Logo from "./Logo.astro";
+import { Icon } from "astro-icon/components";
+import { githubUrl, linkedinUrl, email } from "../config/footer";
+const currentYear = new Date().getFullYear();
 ---
 
-<footer></footer>
+<footer>
+  <content>
+    <Logo />
+    <p>
+      © 2024 {currentYear !== 2024 && `- ${currentYear}`}
+      <span class="project-name">Alejoide by Alejo Sarmiento</span>
+      v2.
+    </p>
+    <div class="links">
+      <a href={githubUrl} target="_blank"><Icon name="mdi:github" /></a>
+      <a href={linkedinUrl} target="_blank"><Icon name="mdi:linkedin" /></a>
+      <a href={`mailto:${email}`}><Icon name="mdi:email" /></a>
+    </div>
+  </content>
+</footer>
 
 <style>
   footer {
-    background-color: black;
-    height: 5em;
-    text-align: center;
-    /* position: ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    width: 100%;
+    position: relative;
+  }
+  content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+  .links {
+    font-size: 2em;
+    margin: 0 0.5em;
+  }
+  .project-name {
+    font-weight: 600;
+    color: var(--accentColor);
   }
 </style>
