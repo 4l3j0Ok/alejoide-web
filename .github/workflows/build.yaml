@@ -1,0 +1,42 @@
+name: build
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  build:
+    name: Build and push
+    runs-on: self-hosted
+    environment: prod
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@master
+      -
+        name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          tags: |
+            type=semver,pattern={{version}}
+          images: |
+            alejoide/alejoide-web
+      -
+        name: Add env files
+        run: |
+          echo "$ENV_CONTENT" > ./.env
+        env:
+          APP_ENV_CONTENT: ${{ secrets.ENV_CONTENT }}
+      -
+        name: Build and push to Docker Hub
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          tags: ${{ steps.meta.outputs.tags }}
+          push: true
