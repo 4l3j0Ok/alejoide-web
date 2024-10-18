@@ -1,0 +1,15 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<a href="/" class={className} {...rest}>ALEJOIDE</a>
+
+<style>
+  a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.25em;
+  }
+</style>
