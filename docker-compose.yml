@@ -1,0 +1,14 @@
+services:
+  alejoide-web:
+    image: alejoide/alejoide-web:latest
+    container_name: alejoide-web
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    networks:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    name: nginx-proxy
+    external: true
