@@ -32,7 +32,7 @@ jobs:
         run: |
           echo "$ENV_CONTENT" > ./.env
         env:
-          APP_ENV_CONTENT: ${{ secrets.ENV_CONTENT }}
+          ENV_CONTENT: ${{ secrets.ENV_CONTENT }}
       -
         name: Build and push to Docker Hub
         uses: docker/build-push-action@v5
