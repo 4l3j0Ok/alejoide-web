@@ -4,9 +4,10 @@ import Header from "../components/Header.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Projects from "../components/Projects.astro";
 import Contact from "../components/Contact.astro";
+import { webTitle, webDescription } from "../config/meta";
 ---
 
-<Layout title="Alejoide">
+<Layout title={webTitle} description={webDescription}>
 	<main>
 		<Header />
 		<AboutMe />

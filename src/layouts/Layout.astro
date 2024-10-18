@@ -6,6 +6,7 @@ import { colors } from "../config/colors.js";
 
 interface Props {
 	title: string;
+	description: string;
 }
 ---
 
@@ -13,7 +14,7 @@ interface Props {
 <html lang="es-ar">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={Astro.props.description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
