@@ -49,9 +49,11 @@ interface Props {
 	body {
 		background: linear-gradient(
 			135deg,
-			var(--backgroundLeftColor),
-			var(--backgroundRightColor) 55%
+			var(--backgroundLeftColor) 0%,
+			var(--backgroundRightColor),
+			var(--backgroundLeftColor)
 		);
+		margin: 0;
 	}
 	a {
 		color: white;
