@@ -14,17 +14,17 @@
     "@astrojs/node": "9.0.0",
     "@astrojs/react": "^4.1.1",
     "@fontsource/montserrat": "^5.1.0",
-    "@iconify-json/mdi": "^1.2.1",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1",
+    "@iconify-json/mdi": "^1.2.2",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
     "astro": "5.1.0",
-    "astro-icon": "^1.1.1",
-    "cookie": "^1.0.1",
+    "astro-icon": "^1.1.4",
+    "cookie": "^1.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "resend": "^4.0.1",
     "sharp": "^0.33.5",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   },
   "pnpm": {
     "overrides": {
