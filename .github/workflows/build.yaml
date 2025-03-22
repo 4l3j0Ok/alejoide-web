@@ -28,12 +28,6 @@ jobs:
           images: |
             alejoide/alejoide-web
       -
-        name: Add env files
-        run: |
-          echo "$ENV_CONTENT" > ./.env
-        env:
-          ENV_CONTENT: ${{ secrets.ENV_CONTENT }}
-      -
         name: Build and push to Docker Hub
         uses: docker/build-push-action@v5
         with:
