@@ -26,11 +26,5 @@
     "sharp": "^0.33.5",
     "typescript": "^5.7.2"
   },
-  "pnpm": {
-    "overrides": {
-      "esbuild": "^0.24.0",
-      "send": "^0.19.0"
-    }
-  },
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
