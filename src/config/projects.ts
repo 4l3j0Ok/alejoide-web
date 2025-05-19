@@ -23,6 +23,6 @@ export const projects = [
     description: "Generador de hojas de personaje para la plataforma de rol online Nivel 20.",
     image: nivel20SheetGeneratorImage,
     webUrl: "https://sheet-generator.alejoide.com/",
-    repoUrl: "https://github.com/4l3j0Ok/prodesk-stacks",
+    repoUrl: "https://github.com/4l3j0Ok/nivel-20-sheet-generator",
   },
 ]
