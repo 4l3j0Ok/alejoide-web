@@ -1,6 +1,6 @@
 import myLinksImage from "../images/projects/my_links.webp";
 import bcraScraperApiImage from "../images/projects/bcra_scraper_api.webp";
-import prodeskStacksImage from "../images/projects/prodesk_stacks.webp";
+import nivel20SheetGeneratorImage from "../images/projects/nivel-20-sheet-generator.webp";
 
 
 export const projects = [
@@ -19,10 +19,10 @@ export const projects = [
     repoUrl: "https://github.com/4l3j0Ok/my-links-web",
   },
   {
-    title: "Prodesk Stacks",
-    description: "Echale un vistazo a los stacks que tengo levantados en mi propio servidor de casa.",
-    image: prodeskStacksImage,
-    webUrl: null,
+    title: "Nivel 20 Sheet Generator",
+    description: "Generador de hojas de personaje para la plataforma de rol online Nivel 20.",
+    image: nivel20SheetGeneratorImage,
+    webUrl: "https://sheet-generator.alejoide.com/",
     repoUrl: "https://github.com/4l3j0Ok/prodesk-stacks",
   },
 ]
