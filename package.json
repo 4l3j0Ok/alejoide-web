@@ -13,18 +13,18 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/node": "9.2.1",
     "@astrojs/react": "^4.2.7",
-    "@fontsource/montserrat": "^5.1.0",
-    "@iconify-json/mdi": "^1.2.2",
-    "@types/react": "^18.3.17",
-    "@types/react-dom": "^18.3.5",
+    "@fontsource/montserrat": "^5.2.5",
+    "@iconify-json/mdi": "^1.2.3",
+    "@types/react": "^18.3.21",
+    "@types/react-dom": "^18.3.7",
     "astro": "5.7.13",
-    "astro-icon": "^1.1.4",
+    "astro-icon": "^1.1.5",
     "cookie": "^1.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "resend": "^4.0.1",
+    "resend": "^4.5.1",
     "sharp": "^0.33.5",
-    "typescript": "^5.7.2"
+    "typescript": "^5.8.3"
   },
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
