@@ -24,6 +24,9 @@ textarea {
   border-radius: 0.5em;
   /* border: 1px solid var(--accentColor); */
   border: none;
+  background-color: var(--inputBackgroundColor);
+  color: var(--inputTextColor);
+  font-family: Montserrat;
 }
 
 input:focus,

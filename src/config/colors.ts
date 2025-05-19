@@ -3,6 +3,8 @@ export const colors = {
   backgroundRight: '#000',
   accent: '#d49c00',
   accentDark: '#d47800',
-  block: '#1e1e1e',
+  inputBackground: '#1e1e1e',
+  inputText: '#fff',
+  block: '#3d3d3d',
 };
 
