@@ -35,7 +35,6 @@ steps:
         from_secret: dockerhub_username
       DOCKERHUB_TOKEN:
         from_secret: dockerhub_token
-      # Variables de entorno de la App
       DEPLOY_PATH:
         from_secret: deploy_path
     commands:
