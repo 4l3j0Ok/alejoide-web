@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/4l3j0Ok/alejoide-web/compare/2.6.0...2.6.1) (2026-03-16)
+
+
+### Bug Fixes
+
+* remove commented environment variable section from deploy configuration ([f971aae](https://github.com/4l3j0Ok/alejoide-web/commit/f971aae0088bb30c250f5c0ce1406faca9f60adf))
+
 # [2.6.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.5.0...2.6.0) (2026-03-16)
 
 
