@@ -1,3 +1,10 @@
+## [2.6.3](https://github.com/4l3j0Ok/alejoide-web/compare/2.6.2...2.6.3) (2026-03-16)
+
+
+### Bug Fixes
+
+* update environment file path for alejoide-web service in deployment configuration ([4bf15d6](https://github.com/4l3j0Ok/alejoide-web/commit/4bf15d67a0e861e3a1b62f4314cbc27864ec220e))
+
 ## [2.6.2](https://github.com/4l3j0Ok/alejoide-web/compare/2.6.1...2.6.2) (2026-03-16)
 
 
