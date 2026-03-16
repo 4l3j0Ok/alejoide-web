@@ -8,14 +8,13 @@ services:
     networks:
       - nginx-proxy
 
-  projects-api:
-    image: alejoide/projects-api:latest
-    container_name: projects-api
-    restart: unless-stopped
-    env_file:
-      - ./config/projects-api/.env
-    networks:
-      - nginx-proxy
+  # projects-api:
+  #   image: alejoide/projects-api:latest
+  #   container_name: projects-api
+  #   restart: unless-stopped
+  #   env_file:
+  #     - ./config/projects-api/.env
+
 networks:
   nginx-proxy:
     name: nginx-proxy

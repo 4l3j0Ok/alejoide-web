@@ -14,17 +14,6 @@ steps:
         - ${CI_COMMIT_SHA:0:8}
       dockerfile: Dockerfile
       platforms: linux/amd64,linux/arm64
-  - name: trigger-deploy
-    image: woodpeckerci/plugin-trigger
-    settings:
-      token:
-        from_secret: woodpecker_deploy_token
-      repositories:
-        - 4l3j0Ok/alejoide-web
-    when:
-      event: tag
-      status:
-        - success
 when:
   event:
     - tag
