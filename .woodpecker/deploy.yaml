@@ -6,7 +6,7 @@ steps:
     image: debian
     commands:
       - ls -lah
-      - tar -czf compose.yaml .env.example
+      - tar -czf alejoide-web.tar.gz -C deploy/ .
   - name: transfer-artifact
     image: appleboy/drone-scp
     settings:
