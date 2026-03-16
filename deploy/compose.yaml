@@ -4,10 +4,18 @@ services:
     container_name: alejoide-web
     restart: unless-stopped
     env_file:
-      - ./.env
+      - ./config/backend/.env
     networks:
       - nginx-proxy
 
+  projects-api:
+    image: alejoide/projects-api:latest
+    container_name: projects-api
+    restart: unless-stopped
+    env_file:
+      - ./config/projects-api/.env
+    networks:
+      - nginx-proxy
 networks:
   nginx-proxy:
     name: nginx-proxy

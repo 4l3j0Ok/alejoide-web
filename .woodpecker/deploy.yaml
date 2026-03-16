@@ -1,0 +1,94 @@
+steps:
+  - name: create-artifact
+    image: debian
+    commands:
+      - ls -lah
+      - tar -czf compose.yaml .env.example
+  - name: transfer-artifact
+    image: appleboy/drone-scp
+    settings:
+      host:
+        from_secret: deploy_host
+      username:
+        from_secret: deploy_user
+      key:
+        from_secret: deploy_ssh_key
+      port: 22
+      source:
+        - alejoide-web.tar.gz
+      target: /tmp
+  - name: deploy-via-ssh
+    image: debian
+    environment:
+      # Credenciales SSH
+      DEPLOY_HOST:
+        from_secret: deploy_host
+      DEPLOY_USER:
+        from_secret: deploy_user
+      DEPLOY_SSH_KEY:
+        from_secret: deploy_ssh_key
+      # Credenciales Docker (DockerHub)
+      DOCKERHUB_USERNAME:
+        from_secret: dockerhub_username
+      DOCKERHUB_TOKEN:
+        from_secret: dockerhub_token
+      # Variables de entorno de la App
+      DEPLOY_PATH:
+        from_secret: deploy_path
+    commands:
+      # 1. Configurar SSH
+      - apt-get update && apt-get install -y openssh-client
+      - mkdir -p ~/.ssh
+      - echo "$DEPLOY_SSH_KEY" > ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts
+
+      # 2. Docker Login Remoto
+      - echo "Iniciando sesión en Docker Registry..."
+      - ssh $DEPLOY_USER@$DEPLOY_HOST "echo '$DOCKERHUB_TOKEN' | docker login docker.io -u '$DOCKERHUB_USERNAME' --password-stdin"
+
+      # 3. Ejecutar Deploy
+      - echo "Desplegando en ruta $DEPLOY_PATH"
+      - |
+        ssh $DEPLOY_USER@$DEPLOY_HOST bash -s -- "$DEPLOY_PATH" <<'EOF'
+          set -e
+          DEPLOY_PATH="$1"
+
+          # Preparar temporales
+          mkdir -p /tmp/alejoide-web
+          tar -xzf /tmp/alejoide-web.tar.gz -C /tmp/alejoide-web
+          
+          # Crear directorio destino
+          mkdir -p "$DEPLOY_PATH"
+          
+          # Entrar al directorio
+          cd "$DEPLOY_PATH"
+          echo "Directorio de trabajo: $(pwd)"
+
+          # Copiar archivos
+          cp -f /tmp/alejoide-web/compose.yaml .
+          cp -f /tmp/alejoide-web/create-env-files.sh .
+          # Copiar solo los .env.example, preservando los .env existentes
+          mkdir -p ./config
+          find /tmp/alejoide-web/config -name "*.env.example" -type f | while read file; do
+            target_dir="./config/$(basename $(dirname "$file"))"
+            mkdir -p "$target_dir"
+            cp -f "$file" "$target_dir/"
+          done
+
+          # Generar envs
+          bash create-env-files.sh
+
+          # Docker Compose
+          docker compose pull
+          docker compose up -d --force-recreate --remove-orphans
+
+          # Limpieza
+          rm -rf /tmp/alejoide-web*
+          echo "Deploy finalizado exitosamente."
+        EOF
+when:
+  event:
+    - push
+    - manual
+    - deployment
