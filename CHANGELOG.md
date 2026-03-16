@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.5.0...2.6.0) (2026-03-16)
+
+
+### Features
+
+* **ci:** update CI/CD configuration with Docker registry and deployment scripts ([b58b975](https://github.com/4l3j0Ok/alejoide-web/commit/b58b9753e48e82083591cec221d5f746f5a35ed7))
+
 # [2.5.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.4.3...2.5.0) (2026-03-16)
 
 
