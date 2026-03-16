@@ -1,3 +1,10 @@
+## [2.6.2](https://github.com/4l3j0Ok/alejoide-web/compare/2.6.1...2.6.2) (2026-03-16)
+
+
+### Bug Fixes
+
+* update artifact creation and environment file path in deployment configuration ([b770a57](https://github.com/4l3j0Ok/alejoide-web/commit/b770a5781b29dc01b39ce186a4463723e66cae75))
+
 ## [2.6.1](https://github.com/4l3j0Ok/alejoide-web/compare/2.6.0...2.6.1) (2026-03-16)
 
 
