@@ -6,16 +6,37 @@ services:
     env_file:
       - ./config/web/.env
     networks:
-      - nginx-proxy
+      - internal
 
-  # projects-api:
-  #   image: alejoide/projects-api:latest
-  #   container_name: projects-api
-  #   restart: unless-stopped
-  #   env_file:
-  #     - ./config/projects-api/.env
+  projects-api:
+    image: alejoide/projects-api:latest
+    container_name: projects-api
+    restart: unless-stopped
+    env_file:
+      - ./config/projects-api/.env
+    networks:
+      - nginx-proxy
+      - internal
+
+  nginx:
+    image: nginx:1.29-alpine
+    container_name: alejoide-nginx
+    env_file:
+      - ./config/nginx/.env
+    volumes:
+      - ./config/nginx/nginx.conf:/etc/nginx/templates/default.conf.template:ro
+    restart: always
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - nginx-proxy
+      - internal
 
 networks:
   nginx-proxy:
     name: nginx-proxy
     external: true
+  internal:
+    name: alejoide-internal
+    driver: bridge

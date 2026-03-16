@@ -1,40 +1,11 @@
 ---
 import Section from "../layouts/Section.astro";
-import Image from "astro/components/Image.astro";
-import { projects } from "../config/projects.js";
-import { Icon } from "astro-icon/components";
+import ProjectsList from "./ProjectsList.tsx";
 ---
 
-<Section sectionId="Projects" , sectionTitle="Proyectos">
+<Section sectionId="Projects" sectionTitle="Proyectos">
   <div class="projects">
-    {
-      projects.map((project) => {
-        const { title, description, image, webUrl, repoUrl } = project;
-        return (
-          <div class="project">
-            <Image src={image} alt={title} loading="lazy" />
-            <div class="info">
-              <h2>{title}</h2>
-              <p>{description}</p>
-            </div>
-            <div class="links">
-              {webUrl && (
-                <a href={webUrl} target="_blank">
-                  <Icon name="mdi:open-in-new" />
-                  Ver sitio
-                </a>
-              )}
-              {repoUrl && (
-                <a href={repoUrl} target="_blank">
-                  <Icon name="mdi:github" />
-                  Ver código
-                </a>
-              )}
-            </div>
-          </div>
-        );
-      })
-    }
+    <ProjectsList client:load />
   </div>
 </Section>
 
@@ -44,45 +15,5 @@ import { Icon } from "astro-icon/components";
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 0.5em;
-  }
-  .project {
-    background-color: rgba(15, 15, 15, 0.5);
-    backdrop-filter: blur(0.5em);
-    display: flex;
-    flex-direction: column;
-    width: 20em;
-    justify-content: space-between;
-    padding: 1.5em;
-    border-radius: 1em;
-    height: 25em;
-    img {
-      width: 100%;
-      height: 10em;
-      border-radius: 1em;
-      object-fit: cover;
-    }
-  }
-  .info {
-    margin: 0 0.5em 0 0.5em;
-    height: 100%;
-  }
-  .links {
-    display: flex;
-    gap: 1em;
-    width: 100%;
-    flex-direction: column;
-    transition: 0.3s;
-    /* justify-self: flex-end; */
-  }
-  .links a {
-    color: white;
-    background-color: var(--accentColor);
-    padding: 0.5em;
-    border-radius: 0.5em;
-    text-decoration: none;
-    text-align: center;
-  }
-  .links a:hover {
-    background-color: var(--accentColorDark);
   }
 </style>
