@@ -4,7 +4,7 @@ steps:
     image: node:24-alpine
     commands:
       - apk add --no-cache git
-      - git config --global user.email "ci@flexcore.dev"
+      - git config --global user.email "ci@alejoide.com"
       - git config --global user.name "CI Bot"
       - npm install -g semantic-release # Install semantic-release, the core package
       - npm install -g @semantic-release/changelog # Install changelog plugin, generates CHANGELOG.md
