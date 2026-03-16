@@ -1,4 +1,5 @@
 FROM node:lts-alpine AS base
+
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
@@ -19,6 +20,8 @@ RUN pnpm install
 
 FROM build-deps AS build
 COPY . .
+ARG PUBLIC_EMAIL=contacto@alejoide.com
+ENV PUBLIC_EMAIL=$PUBLIC_EMAIL
 RUN pnpm run build
 
 FROM base AS runtime
@@ -28,4 +31,4 @@ COPY --from=build /app/dist ./dist
 ENV HOST=0.0.0.0
 ENV PORT=4321
 EXPOSE 4321
-CMD node ./dist/server/entry.mjs
+CMD ["node", "./dist/server/entry.mjs"]
