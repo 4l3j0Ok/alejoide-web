@@ -1,0 +1,40 @@
+steps:
+  - name: build-and-push
+    image: woodpeckerci/plugin-docker-buildx:6
+    settings:
+      registry: ghcr.io
+      repo: alejoide/alejoide-web
+      username:
+        from_secret: dockerhub_username
+      password:
+        from_secret: dockerhub_token
+      tags:
+        - latest
+        - ${CI_COMMIT_TAG}
+        - ${CI_COMMIT_SHA:0:8}
+      dockerfile: Dockerfile
+      platforms: linux/amd64,linux/arm64
+  - name: trigger-deploy
+    image: woodpeckerci/plugin-trigger
+    settings:
+      token:
+        from_secret: woodpecker_deploy_token
+      repositories:
+        - flex-core/gestion-digital-deploy
+    when:
+      event: tag
+      status:
+        - success
+  - name: notify
+    image: appleboy/drone-discord
+    settings:
+      webhook_id:
+        from_secret: discord_webhook_id
+      webhook_token:
+        from_secret: discord_webhook_token
+      message: "{{#success build.status}}### ✅ **BUILD EXITOSO**{{else}}### ❌ **BUILD FALLIDO**{{/success}}\n\n**Repositorio:** `{{repo.name}}`\n**Branch / Tag:** `{{commit.branch}}`\n**Evento:** `{{uppercase build.event}}`\n\n**Commit:** [`{{truncate commit.sha 8}}`]({{commit.link}})\n**Autor:** `{{commit.author}} <{{commit.email}}>`\n**Mensaje:** {{commit.message}}\n\n**Build:** [#{{build.number}}]({{build.link}})\n**Estado:** `{{uppercase build.status}}`\n**Finalizado:** `{{datetime build.finished \"2006-01-02 15:04\" \"\"}}`"
+when:
+  event:
+    - tag
+  branch:
+    - main
