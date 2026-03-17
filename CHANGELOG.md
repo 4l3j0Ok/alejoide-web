@@ -1,3 +1,10 @@
+## [2.8.3](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.2...2.8.3) (2026-03-17)
+
+
+### Bug Fixes
+
+* update nginx service dependencies to reference correct services ([0ae800b](https://github.com/4l3j0Ok/alejoide-web/commit/0ae800b381b06c449332eb23c594979199ef31db))
+
 ## [2.8.2](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.1...2.8.2) (2026-03-17)
 
 
