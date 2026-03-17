@@ -27,8 +27,8 @@ services:
       - ./config/nginx/nginx.conf:/etc/nginx/templates/default.conf.template:ro
     restart: always
     depends_on:
-      - frontend
-      - backend
+      - alejoide-web
+      - projects-api
     networks:
       - nginx-proxy
       - internal

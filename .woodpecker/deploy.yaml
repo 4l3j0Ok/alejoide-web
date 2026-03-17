@@ -89,4 +89,9 @@ steps:
 when:
   event:
     - deployment
+    - manual
+  branch:
+    - main
+  path:
+    - deploy/**
   evaluate: 'CI_PIPELINE_DEPLOY_TARGET == "alejoide-web"'
