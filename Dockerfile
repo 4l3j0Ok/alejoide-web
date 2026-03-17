@@ -25,10 +25,16 @@ ENV PUBLIC_EMAIL=$PUBLIC_EMAIL
 RUN pnpm run build
 
 FROM base AS runtime
+
+RUN addgroup -S app && adduser -S app -G app
+
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 
 ENV HOST=0.0.0.0
 ENV PORT=4321
 EXPOSE 4321
+
+USER app
+
 CMD ["node", "./dist/server/entry.mjs"]
