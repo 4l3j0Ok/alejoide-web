@@ -1,3 +1,12 @@
+## [2.8.4](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.3...2.8.4) (2026-03-17)
+
+
+### Bug Fixes
+
+* copy nginx configuration files during deployment ([f35dac2](https://github.com/4l3j0Ok/alejoide-web/commit/f35dac2fa4e64112c33be5e75bc94cf31fec1368))
+* update nginx configuration to reference correct backend and frontend services ([b4e75cf](https://github.com/4l3j0Ok/alejoide-web/commit/b4e75cf490d62bacc6e73a9c510f96685c8b2e02))
+* update package.json and pnpm-lock.yaml to include @iconify/react dependency ([0ae73e0](https://github.com/4l3j0Ok/alejoide-web/commit/0ae73e0a85c444f86da5759047a6e64a514a05fc))
+
 ## [2.8.3](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.2...2.8.3) (2026-03-17)
 
 
