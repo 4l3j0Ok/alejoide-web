@@ -1,3 +1,10 @@
+## [2.8.5](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.4...2.8.5) (2026-03-17)
+
+
+### Bug Fixes
+
+* update env_file path for alejoide-web service in compose.yaml ([fc5d1ae](https://github.com/4l3j0Ok/alejoide-web/commit/fc5d1ae440a6bc861d50a43558784eb1c798af22))
+
 ## [2.8.4](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.3...2.8.4) (2026-03-17)
 
 
