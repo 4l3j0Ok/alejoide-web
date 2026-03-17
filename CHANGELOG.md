@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.7.0...2.8.0) (2026-03-17)
+
+
+### Features
+
+* add deployment trigger and refine deployment conditions in pipeline ([5f76415](https://github.com/4l3j0Ok/alejoide-web/commit/5f764153ddd660d05626045ebf40fdba3971bd97))
+
 # [2.7.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.6.3...2.7.0) (2026-03-17)
 
 
