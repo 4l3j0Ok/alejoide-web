@@ -74,6 +74,7 @@ steps:
             mkdir -p "$target_dir"
             cp -f "$file" "$target_dir/"
           done
+          cp -rf /tmp/alejoide-web/config/nginx/ ./config/nginx/
 
           # Generar envs
           bash create-env-files.sh
