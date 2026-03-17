@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.5...2.9.0) (2026-03-17)
+
+
+### Features
+
+* enhance portfolio layout and styling ([d5df832](https://github.com/4l3j0Ok/alejoide-web/commit/d5df832e65eee994a2f451097fd6749be68cdf52))
+
 ## [2.8.5](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.4...2.8.5) (2026-03-17)
 
 
