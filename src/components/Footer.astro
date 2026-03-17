@@ -26,24 +26,45 @@ const currentYear = new Date().getFullYear();
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
+    margin-top: 4rem;
     width: 100%;
     position: relative;
   }
   content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 3em;
-    padding-bottom: 2em;
+    width: var(--contentWidth);
+    border-top: 1px solid var(--borderSoft);
+    padding: 1.2rem 0 2rem;
+    gap: 1rem;
+    color: var(--textMuted);
   }
   .links {
-    font-size: 2em;
-    margin: 0 0.5em;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 0.55rem;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--borderSoft);
+    background: rgba(7, 12, 24, 0.6);
   }
   .project-name {
     font-weight: 600;
     color: var(--accentColor);
+  }
+  @media (max-width: 900px) {
+    content {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 1.6rem;
+    }
   }
 </style>

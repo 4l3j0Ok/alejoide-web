@@ -5,23 +5,57 @@ import ContactForm from "../components/ContactForm.tsx";
 import { PUBLIC_EMAIL } from "astro:env/client";
 ---
 
-<Section sectionId="Contact" , sectionTitle="Contacto">
-  <p>Si querés contactarme, podés hacerlo a través de este formulario.</p>
-  <ContactForm client:load />
-  <p>
-    O si preferís, podes escribirme a mi correo electrónico: <a
-      href={`mailto:${PUBLIC_EMAIL}`}
-      class="email">{PUBLIC_EMAIL}</a
-    >
-  </p>
+<Section sectionId="Contact" sectionTitle="Contacto">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>
+        Si querés trabajar conmigo o conversar sobre una oportunidad, este
+        formulario es el mejor canal.
+      </p>
+      <p>
+        También podés escribirme directo a <a
+          href={`mailto:${PUBLIC_EMAIL}`}
+          class="email">{PUBLIC_EMAIL}</a
+        >.
+      </p>
+    </div>
+    <div class="form-card">
+      <ContactForm client:load />
+    </div>
+  </div>
 </Section>
 
 <style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  .contact-info {
+    border: 1px solid var(--borderSoft);
+    border-radius: 1rem;
+    padding: 1rem;
+    background: rgba(9, 16, 30, 0.6);
+    box-sizing: border-box;
+  }
+  .form-card {
+    border: 1px solid var(--borderSoft);
+    border-radius: 1rem;
+    padding: 1rem;
+    background: rgba(9, 16, 30, 0.72);
+  }
   .email {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--accentColor);
+    border-bottom: 1px dashed rgba(72, 199, 168, 0.65);
   }
   .email:hover {
     color: var(--accentColorDark);
+  }
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

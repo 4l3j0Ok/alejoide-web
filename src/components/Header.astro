@@ -1,66 +1,135 @@
 ---
 import { Image } from "astro:assets";
 import meImage from "../images/me.webp";
+import { Icon } from "astro-icon/components";
+import { skills } from "../config/skills";
+
+const initialExperienceDate: Date = new Date(2020, 7, 19);
+const experienceYears: number = Math.floor(
+  (Date.now() - initialExperienceDate.getTime()) /
+    (1000 * 60 * 60 * 24 * 365.25),
+);
 ---
 
 <header>
-	<div class="content">
-		<div class="item">
-			<p>Hola, soy</p>
-			<h1>Alejo Sarmiento</h1>
-			<p>
-				<strong>SRE</strong> y <strong>Desarrollador de aplicaciones</strong>
-			</p>
-		</div>
-		<div class="item">
-			<Image src={meImage} alt="Alejo Sarmiento" loading="eager" />
-		</div>
-	</div>
+  <div class="content">
+    <div class="item info">
+      <p class="eyebrow">Hola, soy</p>
+      <h1>Alejo Sarmiento</h1>
+      <p class="summary">
+        SRE y desarrollador de software con experiencia con más de {
+          experienceYears
+        } años de experiencia en la industria tecnológica, especializado en backend
+        e infraestructura de software.
+      </p>
+      <div class="stack">
+        <span>SRE/DevOps</span>
+        <span>Backend</span>
+        <span>Frontend</span>
+      </div>
+      <div class="actions">
+        <a href="#Projects">Ver proyectos</a>
+        <a class="ghost" href="#Contact">Contactar</a>
+      </div>
+    </div>
+    <div class="item visual">
+      <Image src={meImage} alt="Alejo Sarmiento" loading="eager" />
+    </div>
+  </div>
 </header>
 
 <style>
-	header {
-		height: 90vh;
-		display: grid;
-		place-items: center;
-	}
-	.content {
-		font-size: 1.5em;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: var(--contentWidth);
-		max-width: 1500px;
-	}
-	.content p {
-		margin-bottom: 0;
-		margin-top: 0;
-	}
-	.content h1 {
-		font-size: 2.5em;
-		font-weight: 700;
-		color: var(--accentColor);
-		margin-bottom: 0;
-		margin-top: 0;
-	}
-	.item {
-		flex-basis: 40%;
-		box-sizing: border-box;
-	}
-	.item img {
-		width: 100%;
-		height: 100%;
-		mask-image: linear-gradient(black 80%, transparent);
-	}
-	@media (max-width: 900px) {
-		.content {
-			font-size: 1.25em;
-			flex-direction: column;
-			width: 60%;
-		}
-		.item {
-			flex-grow: 1;
-			margin-top: 1em;
-		}
-	}
+  header {
+    display: flex;
+    justify-content: center;
+    padding-top: 6.8rem;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+    align-items: center;
+    width: var(--contentWidth);
+    min-height: min(76vh, 760px);
+  }
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.09em;
+    color: var(--accentColor);
+    margin: 0;
+  }
+  .content h1 {
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    font-weight: 700;
+    margin: 0.25rem 0 0;
+    line-height: 1.04;
+  }
+  .summary {
+    font-size: clamp(1rem, 1.5vw, 1.26rem);
+    max-width: 52ch;
+    margin: 1rem 0 0;
+  }
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.3rem;
+  }
+  .stack span {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--borderSoft);
+    background: rgba(12, 20, 37, 0.74);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-family: "Cascadia Code Variable", monospace;
+    color: var(--textPrimary);
+  }
+  .actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.55rem;
+  }
+  .actions a {
+    padding: 0.7rem 1.1rem;
+    border-radius: 0.8rem;
+    border: 1px solid transparent;
+    background: var(--accentColor);
+    color: #041018;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .actions a:hover {
+    background: var(--accentColorDark);
+    color: #e6fffb;
+  }
+  .actions .ghost {
+    background: transparent;
+    border-color: var(--borderSoft);
+    color: var(--textPrimary);
+  }
+  .visual {
+    padding: 1.1rem;
+    border-radius: 1.3rem;
+  }
+  .visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: saturate(1.2) contrast(1.03)
+      drop-shadow(0px 0px 25px var(--blockColor));
+  }
+  @media (max-width: 900px) {
+    header {
+      padding-top: 7.8rem;
+    }
+    .content {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .actions {
+      flex-wrap: wrap;
+    }
+  }
 </style>

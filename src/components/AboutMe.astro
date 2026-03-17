@@ -1,102 +1,127 @@
 ---
 import Section from "../layouts/Section.astro";
 import { Icon } from "astro-icon/components";
+
+const birthDate: Date = new Date(2001, 1, 2);
+const age: number = Math.floor(
+  (Date.now() - birthDate.getTime()) / (1000 * 60 * 60 * 24 * 365.25),
+);
 ---
 
-<Section sectionId="AboutMe" , sectionTitle="Sobre mí">
-	<p>Mi nombre es Alejo. Tengo 23 años y vivo en Argentina.</p>
-	<p>
-		En 2013 decidí orientar mis conocimientos hacia el mundo de la programación
-		y la informática, estudiando informática en mi escuela secundaria técnica.
-	</p>
-	<p>
-		En 2020, al finalizar mis estudios secundarios, comencé a trabajar como
-		desarrollador backend en una empresa de desarrollo de software, donde
-		aprendí a trabajar con Python, Flask, FastAPI, entre otras tecnologías.
-	</p>
-	<p>
-		A comienzos de 2022, se me ofreció la oportunidad de trabajar como
-		SRE/DevOps, un mundo nuevo con nuevos desafíos que me tocó enfrentar.
-	</p>
-	<p>
-		A día de hoy me encuentro enamorado de esta nueva área, y apunto a seguir
-		aprendiendo y creciendo profesionalmente en ella.
-	</p>
-	<h1>Mis áreas de trabajo</h1>
-	<div class="work-areas">
-		<div class="work-area">
-			<h2>
-				<Icon name="mdi:infinity" />
-				SRE / DevOps
-			</h2>
-			<p>
-				Actualmente me encuentro trabajando de SRE/DevOps, donde trabajo
-				principalmente con tecnologías como Docker, Kubernetes, Webservers,
-				Jenkins, GitLab, que me permiten crear infraestructura y pipelines para
-				aplicar prácticas de CI/CD.
-			</p>
-		</div>
-		<div class="work-area">
-			<h2>
-				<Icon name="mdi:language-python" />
-				Backend
-			</h2>
-			<p>
-				Tengo experiencia trabajando como desarrollador backend, siendo mi
-				fuerte principal el desarrollo en Python, lenguaje que me apasiona y con
-				el que he trabajado tanto en proyectos personales como profesionales con
-				frameworks como Flask, FastAPI, PyQT/PySide, Reflex, entre otros.
-			</p>
-		</div>
-		<div class="work-area">
-			<h2>
-				<Icon name="mdi:react" />
-				Frontend
-			</h2>
-			<p>
-				Me encuentro incursionando en el mundo del desarrollo de frontend, donde
-				estoy aprendiendo Astro, Reflex, React, entre otras tecnologías con el
-				objetivo de poder crear aplicaciones web.
-			</p>
-		</div>
-		<div class="work-area">
-			<h2>
-				<Icon name="mdi:school" />
-				Profesor
-			</h2>
-			<p>
-				Me gusta mucho enseñar, por lo que también estoy apuntando a ser
-				profesor de programación en escuelas de nivel superior en un futuro.
-			</p>
-		</div>
-	</div>
-	<style>
-		h1 {
-			font-size: 2.5em;
-			font-weight: 700;
-			color: var(--accentColor);
-		}
-		.work-areas {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 2em;
-			justify-content: space-between;
-			flex-direction: row;
-		}
-		.work-area {
-			min-width: 20%;
-			width: 45%;
-		}
-		.work-area [data-icon] {
-			color: var(--accentColor);
-		}
-		@media (max-width: 900px) {
-			.work-areas {
-				flex-direction: column;
-			}
-			.work-areas .work-area {
-				width: 100%;
-			}
-		}
-	</style>
+<Section sectionId="AboutMe" sectionTitle="Sobre mí">
+  <div class="intro-grid">
+    <p class="lead">
+      Mi nombre es Alejo. Tengo {age} años y vivo en Argentina.
+    </p>
+    <p>
+      Decidí orientar mis estudios desde adolescente, enfocandome hacia el mundo
+      de la programación y la informática, estudiando en una escuela secundaria
+      técnica con especialización en sistemas.
+    </p>
+    <p>
+      A mediados de 2020 comencé a trabajar en Leafnoise como desarrollador
+      backend, donde consolidé experiencia con Python, Flask y FastAPI en
+      entornos productivos.
+    </p>
+    <p>
+      Pasados dos años di el salto a SRE/DevOps, donde actualmente me encuentro
+      trabajando, creando infraestructura y utilizando tecnologías que rodean el
+      ecosistema de DevOps.
+    </p>
+    <p>
+      Hoy en día trabajo como SRE/DevOps en Leafnoise, haciendo una carrera de
+      Analista Programador y desarrollando una amplia variedad de proyectos
+      personales.
+    </p>
+  </div>
+  <h3>Mis áreas de trabajo</h3>
+  <div class="work-areas">
+    <div class="work-area">
+      <h4>
+        <Icon name="mdi:infinity" />
+        SRE / DevOps
+      </h4>
+      <p>
+        Actualmente me encuentro trabajando de SRE/DevOps, donde trabajo
+        principalmente con tecnologías como Docker, Kubernetes, Webservers,
+        Jenkins y GitLab para crear infraestructura y pipelines de CI/CD.
+      </p>
+    </div>
+    <div class="work-area">
+      <h4>
+        <Icon name="mdi:language-python" />
+        Backend
+      </h4>
+      <p>
+        Tengo experiencia como desarrollador backend, siendo mi fuerte principal
+        el desarrollo en Python con frameworks como Flask, FastAPI, PyQT/PySide
+        y Reflex.
+      </p>
+    </div>
+    <div class="work-area">
+      <h4>
+        <Icon name="mdi:react" />
+        Frontend
+      </h4>
+      <p>
+        Me encuentro incursionando en el desarrollo frontend, aprendiendo Astro,
+        Reflex y React para crear aplicaciones web modernas y mantenibles.
+      </p>
+    </div>
+    <div class="work-area">
+      <h4>
+        <Icon name="mdi:school" />
+        Profesor
+      </h4>
+      <p>
+        Me gusta enseñar y tengo como objetivo aportar en formación técnica en
+        niveles superiores a mediano plazo.
+      </p>
+    </div>
+  </div>
+  <style>
+    .intro-grid {
+      padding: 1.1rem;
+      border: 1px solid var(--borderSoft);
+      border-radius: 1rem;
+      background: rgba(9, 15, 27, 0.65);
+      margin-bottom: 1.4rem;
+    }
+    .lead {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--textPrimary);
+    }
+    h3 {
+      margin: 0.25rem 0 1rem;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+    }
+    .work-areas {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .work-area {
+      border: 1px solid var(--borderSoft);
+      border-radius: 1rem;
+      padding: 1rem;
+      background: rgba(10, 16, 30, 0.65);
+    }
+    .work-area h4 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 1.05rem;
+    }
+    .work-area [data-icon] {
+      color: var(--accentColor);
+    }
+    @media (max-width: 900px) {
+      .intro-grid,
+      .work-areas {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </Section>

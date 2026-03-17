@@ -7,8 +7,9 @@ interface Props {
 
 <section id={Astro.props.sectionId}>
   <div class="content">
-    <div class="title">
-      <h1>{Astro.props.sectionTitle}</h1>
+    <div class="section-heading">
+      <p class="kicker">Portfolio</p>
+      <h2>{Astro.props.sectionTitle}</h2>
     </div>
     <div class="body">
       <slot />
@@ -18,29 +19,45 @@ interface Props {
 
 <style>
   section {
-    margin-top: 5em;
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
   }
   .content {
     width: var(--contentWidth);
-    max-width: 1500px;
+    display: grid;
+    gap: 1.5rem;
   }
-  .title {
-    font-size: 1.5em;
-    font-weight: 700;
+  .section-heading {
+    border-bottom: 1px solid var(--borderSoft);
+    padding-bottom: 1rem;
+  }
+  .kicker {
+    margin: 0;
+    font-family: "Cascadia Code Variable", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.76rem;
     color: var(--accentColor);
   }
-  .title h1 {
-    margin: 0 0 0.5em 0;
+  .section-heading h2 {
+    margin: 0.25rem 0 0;
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--textPrimary);
+  }
+  .body {
+    background: var(--surfaceSoft);
+    border: 1px solid var(--borderSoft);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: var(--shadowSoft);
+    backdrop-filter: blur(10px);
   }
   @media (max-width: 900px) {
-    .content {
-      flex-direction: column;
-    }
-    .title {
-      font-size: 2em;
+    section {
+      margin-top: 3rem;
     }
   }
 </style>

@@ -5,6 +5,14 @@
   gap: 0.5em;
 }
 
+.form-input label {
+  font-family: "Cascadia Code Variable", monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--textMuted);
+}
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -20,43 +28,46 @@
 
 input,
 textarea {
-  padding: 0.5em;
-  border-radius: 0.5em;
-  /* border: 1px solid var(--accentColor); */
-  border: none;
+  padding: 0.72rem;
+  border-radius: 0.72rem;
+  border: 1px solid transparent;
   background-color: var(--inputBackgroundColor);
   color: var(--inputTextColor);
-  font-family: Montserrat;
+  font-family: "Cascadia Code Variable";
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input:focus,
 textarea:focus {
-
-  outline: 1px solid var(--accentColor);
+  outline: none;
+  border-color: var(--accentColor);
+  box-shadow: 0 0 0 3px rgba(72, 199, 168, 0.14);
 }
 
 textarea {
-  height: 5em;
+  min-height: 8rem;
   resize: none;
 }
 
 button {
-  padding: 0.5em;
-  border-radius: 0.5em;
-  border: none;
-  background-color: var(--accentColor);
-  color: white;
+  padding: 0.72rem;
+  border-radius: 0.72rem;
+  border: 1px solid transparent;
+  background-color: #c5f6e9;
+  color: #05201a;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: var(--accentColorDark);
+  background-color: #9de8d3;
+  transform: translateY(-1px);
 }
 
 :disabled {
   background-color: var(--blockColor);
-  color: white;
+  color: var(--textPrimary);
   cursor: not-allowed;
 }
 

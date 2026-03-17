@@ -1,69 +1,140 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import "@fontsource/montserrat";
+import "@fontsource-variable/manrope";
+import "@fontsource-variable/cascadia-code";
 import { colors } from "../config/colors.js";
 
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 ---
 
 <!doctype html>
 <html lang="es-ar">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={Astro.props.description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{Astro.props.title}</title>
-	</head>
-	<body>
-		<Navbar />
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={Astro.props.description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{Astro.props.title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style
-	is:global
-	define:vars={{
-		backgroundLeftColor: colors.backgroundLeft,
-		backgroundRightColor: colors.backgroundRight,
-		accentColor: colors.accent,
-		accentColorDark: colors.accentDark,
-		inputBackgroundColor: colors.inputBackground,
-		inputTextColor: colors.inputText,
-		blockColor: colors.block,
-		contentWidth: "70%",
-	}}
+  is:global
+  define:vars={{
+    backgroundLeftColor: colors.backgroundLeft,
+    backgroundRightColor: colors.backgroundRight,
+    accentColor: colors.accent,
+    accentColorDark: colors.accentDark,
+    inputBackgroundColor: colors.inputBackground,
+    inputTextColor: colors.inputText,
+    blockColor: colors.block,
+    contentWidth: "min(1120px, 92vw)",
+  }}
 >
-	html {
-		font-family: Montserrat;
-		color: white;
-		::selection {
-			background: var(--accentColor);
-			color: white;
-		}
-		scroll-behavior: smooth;
-	}
-	body {
-		background: linear-gradient(
-			135deg,
-			var(--backgroundLeftColor) 0%,
-			var(--backgroundRightColor),
-			var(--backgroundLeftColor)
-		);
-		margin: 0;
-	}
-	a {
-		color: white;
-		text-decoration: none;
-		transition: 0.3s;
-	}
-	a:hover {
-		color: var(--accentColor);
-	}
+  :root {
+    --surfaceSoft: rgba(14, 24, 43, 0.56);
+    --surfaceStrong: rgba(10, 18, 34, 0.85);
+    --borderSoft: rgba(153, 181, 255, 0.2);
+    --textPrimary: #f4f8ff;
+    --textMuted: #9aa8bf;
+    --shadowSoft: 0 24px 60px rgba(3, 7, 14, 0.38);
+  }
+  html {
+    font-family: "Manrope Variable", sans-serif;
+    color: var(--textPrimary);
+    ::selection {
+      background: var(--accentColor);
+      color: #05121b;
+    }
+    scroll-behavior: smooth;
+  }
+  body {
+    background:
+      radial-gradient(
+        circle at 12% 10%,
+        rgba(72, 199, 168, 0.17),
+        transparent 34%
+      ),
+      radial-gradient(
+        circle at 87% 18%,
+        rgba(59, 130, 246, 0.2),
+        transparent 32%
+      ),
+      linear-gradient(
+        130deg,
+        var(--backgroundLeftColor),
+        var(--backgroundRightColor)
+      );
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(
+      to right,
+      rgba(102, 123, 161, 0.08) 1px,
+      transparent 1px
+    );
+    background-size: 48px 48px;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: -1;
+  }
+  a {
+    color: var(--textPrimary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: var(--accentColor);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  a {
+    font-family: "Cascadia Code Variable", monospace;
+  }
+  p {
+    line-height: 1.75;
+    color: var(--textMuted);
+  }
+  main {
+    display: grid;
+    gap: 2.5rem;
+    padding-bottom: 2rem;
+  }
+  main > * {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: sectionReveal 0.65s ease forwards;
+  }
+  main > *:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+  main > *:nth-child(3) {
+    animation-delay: 0.14s;
+  }
+  main > *:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  @keyframes sectionReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
