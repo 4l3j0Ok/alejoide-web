@@ -1,3 +1,10 @@
+## [2.8.2](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.1...2.8.2) (2026-03-17)
+
+
+### Bug Fixes
+
+* update deployment repository reference to use 'main' branch ([9f54118](https://github.com/4l3j0Ok/alejoide-web/commit/9f54118a294c066ca6a75b133e244b7f77f5dfa3))
+
 ## [2.8.1](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.0...2.8.1) (2026-03-17)
 
 
