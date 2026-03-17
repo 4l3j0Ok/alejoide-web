@@ -15,6 +15,7 @@
     "@astrojs/react": "^5.0.0",
     "@fontsource/montserrat": "^5.2.8",
     "@iconify-json/mdi": "^1.2.3",
+    "@iconify/react": "^6.0.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro": "6.0.4",
@@ -26,9 +27,5 @@
     "sharp": "^0.34.5",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
-  "devDependencies": {
-    "@iconify/react": "^6.0.2",
-    "install": "^0.13.0"
-  }
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
