@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.6.3...2.7.0) (2026-03-17)
+
+
+### Features
+
+* refactor project listing and add API integration for dynamic project data ([68bff2e](https://github.com/4l3j0Ok/alejoide-web/commit/68bff2ed7f02631216249371dae52d95a9215b5e))
+
 ## [2.6.3](https://github.com/4l3j0Ok/alejoide-web/compare/2.6.2...2.6.3) (2026-03-16)
 
 
