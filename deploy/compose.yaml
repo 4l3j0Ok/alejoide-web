@@ -4,7 +4,7 @@ services:
     container_name: alejoide-web
     restart: unless-stopped
     env_file:
-      - ./config/web/.env
+      - ./config/alejoide-web/.env
     networks:
       - internal
 
