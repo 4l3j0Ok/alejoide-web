@@ -1,3 +1,11 @@
+## [2.8.1](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.0...2.8.1) (2026-03-17)
+
+
+### Bug Fixes
+
+* update deployment repository reference to include pipeline number ([e51d707](https://github.com/4l3j0Ok/alejoide-web/commit/e51d70793c667fead85ac0bd83ef335f9950b5a7))
+* update deployment repository reference to include pipeline number ([791b9f7](https://github.com/4l3j0Ok/alejoide-web/commit/791b9f7daff04a89b0808f5494c9930512892ed1))
+
 # [2.8.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.7.0...2.8.0) (2026-03-17)
 
 
