@@ -1,3 +1,10 @@
+## [2.9.1](https://github.com/4l3j0Ok/alejoide-web/compare/2.9.0...2.9.1) (2026-03-17)
+
+
+### Bug Fixes
+
+* add volumes configuration for projects-api service and remove unused SQLITE_DB_PATH ([e17c9df](https://github.com/4l3j0Ok/alejoide-web/commit/e17c9df7a3d0940c0475721582f72e9b60358ff4))
+
 # [2.9.0](https://github.com/4l3j0Ok/alejoide-web/compare/2.8.5...2.9.0) (2026-03-17)
 
 
