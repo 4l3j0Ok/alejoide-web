@@ -1,3 +1,10 @@
+## [2.9.2](https://github.com/4l3j0Ok/alejoide-web/compare/2.9.1...2.9.2) (2026-03-17)
+
+
+### Bug Fixes
+
+* add user and group creation in Dockerfile for runtime environment ([10db07c](https://github.com/4l3j0Ok/alejoide-web/commit/10db07c5a7a5ae623e2dae642cedcddef392484b))
+
 ## [2.9.1](https://github.com/4l3j0Ok/alejoide-web/compare/2.9.0...2.9.1) (2026-03-17)
 
 
