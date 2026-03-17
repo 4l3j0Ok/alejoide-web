@@ -19,8 +19,9 @@ steps:
       token:
         from_secret: woodpecker_deploy_token
       repositories:
-        - 4l3j0Ok/alejoide-web@${CI_PIPELINE_NUMBER}
+        - 4l3j0Ok/alejoide-web@main
       deploy: alejoide-web
+      last_successful: true
     when:
       status:
         - success
