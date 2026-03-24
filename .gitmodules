@@ -1,0 +1,3 @@
+[submodule "projects-api"]
+	path = projects-api
+	url = https://github.com/4l3j0Ok/projects-api
