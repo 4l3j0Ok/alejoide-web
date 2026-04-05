@@ -1,16 +1,11 @@
 # Ref: https://github.com/semantic-release/semantic-release
 steps:
   - name: semrel
-    image: node:24-alpine
+    image: ghcr.io/voxpupuli/semantic-release:latest
     commands:
-      - apk add --no-cache git
       - git config --global user.email "ci@alejoide.com"
       - git config --global user.name "CI Bot"
-      - npm install -g semantic-release # Install semantic-release, the core package
-      - npm install -g @semantic-release/changelog # Install changelog plugin, generates CHANGELOG.md
-      - npm install -g @semantic-release/git # Install git plugin, required for changelog updates
-      - npm install -g @semantic-release/github # Install GitHub plugin, required for GitHub releases
-      - npx semantic-release
+      - semantic-release
     environment:
       GITHUB_TOKEN:
         from_secret: github_token
