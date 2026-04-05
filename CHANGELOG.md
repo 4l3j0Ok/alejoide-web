@@ -1,3 +1,10 @@
+## [2.9.3](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.2...2.9.3) (2026-04-05)
+
+
+### Bug Fixes
+
+* update projects-api submodule reference ([e72b482](https://github.com/4l3j0Ok/alejoide.com/commit/e72b4820e9b7eb5a17106ff5d94dacf92bd64ce7))
+
 ## [2.9.2](https://github.com/4l3j0Ok/alejoide-web/compare/2.9.1...2.9.2) (2026-03-17)
 
 
