@@ -75,6 +75,17 @@ button:disabled:hover {
   background-color: var(--blockColor);
 }
 
+.char-counter {
+  font-size: 0.7rem;
+  color: var(--textMuted);
+  text-align: right;
+  font-family: "Cascadia Code Variable", monospace;
+}
+
+.char-counter.warn {
+  color: #e57373;
+}
+
 @media (max-width: 900px) {
   .top {
     flex-direction: column;
