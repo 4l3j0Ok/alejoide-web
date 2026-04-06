@@ -1,3 +1,10 @@
+## [2.9.6](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.5...2.9.6) (2026-04-06)
+
+
+### Bug Fixes
+
+* add security configuration to disable origin check ([ea52319](https://github.com/4l3j0Ok/alejoide.com/commit/ea52319d4ef20d28ca866341fbecb6ca43d6c181))
+
 ## [2.9.5](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.4...2.9.5) (2026-04-06)
 
 
