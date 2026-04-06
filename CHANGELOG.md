@@ -1,3 +1,10 @@
+## [2.9.5](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.4...2.9.5) (2026-04-06)
+
+
+### Bug Fixes
+
+* add missing Origin header in frontend proxy configuration ([ddfee97](https://github.com/4l3j0Ok/alejoide.com/commit/ddfee97f05177cf331302e01760c6328eec07b44))
+
 ## [2.9.4](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.3...2.9.4) (2026-04-06)
 
 
