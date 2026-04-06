@@ -1,3 +1,10 @@
+## [2.9.4](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.3...2.9.4) (2026-04-06)
+
+
+### Bug Fixes
+
+* correct path for web .env file in create-env-files script ([35bc3cd](https://github.com/4l3j0Ok/alejoide.com/commit/35bc3cd9090294f79eb22043b3e70521c93413b4))
+
 ## [2.9.3](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.2...2.9.3) (2026-04-05)
 
 
