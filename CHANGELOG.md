@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.6...2.10.0) (2026-04-06)
+
+
+### Features
+
+* implement rate limiting and request validation for email API ([3419e47](https://github.com/4l3j0Ok/alejoide.com/commit/3419e4740a5f71330d16bd7b2d262348d1a06e27))
+
 ## [2.9.6](https://github.com/4l3j0Ok/alejoide.com/compare/2.9.5...2.9.6) (2026-04-06)
 
 
