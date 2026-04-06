@@ -4,7 +4,7 @@ cdir=$(dirname "$0")
 
 web_env_exists=false
 projects_api_env_exists=false
-[[ -f "$cdir/config/web/.env" ]] && web_env_exists=true
+[[ -f "$cdir/config/alejoide-web/.env" ]] && web_env_exists=true
 [[ -f "$cdir/config/projects-api/.env" ]] && projects_api_env_exists=true
 
 
